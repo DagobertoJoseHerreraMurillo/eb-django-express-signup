@@ -62,9 +62,6 @@ def send_notification(self, email):
             'Error sending SNS message: ' + (e.fmt if hasattr(e, 'fmt') else '') + ','.join(e.args))
 
 
-
-
-
 def get_leads(self, domain, preview):
     try:
         dynamodb = boto3.resource('dynamodb', region_name=AWS_REGION)
