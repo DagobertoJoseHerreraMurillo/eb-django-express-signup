@@ -5,7 +5,6 @@ import logging
 
 STARTUP_SIGNUP_TABLE = os.environ['STARTUP_SIGNUP_TABLE']
 AWS_REGION = os.environ['AWS_REGION']
-NEW_SIGNUP_TOPIC = os.environ['NEW_SIGNUP_TOPIC']
 
 logger = logging.getLogger(__name__)
 
