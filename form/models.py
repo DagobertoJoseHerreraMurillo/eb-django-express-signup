@@ -45,8 +45,6 @@ class Leads(models.Model):
         return status
 
 
-
-
 def send_notification(self, email):
     sns = boto3.client('sns', region_name=AWS_REGION)
     try:
