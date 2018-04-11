@@ -43,18 +43,3 @@ class Leads(models.Model):
             logger.error('Unknown error inserting item to database.')
 
         return status
-
-
-def send_notification(self, email):
-    sns = boto3.client('sns', region_name=AWS_REGION)
-    try:
-        sns.publish(
-            TopicArn=NEW_SIGNUP_TOPIC,
-            Message='New signup: %s' % email,
-            Subject='New signup',
-        )
-        logger.error('SNS message sent.')
-
-    except Exception as e:
-        logger.error(
-            'Error sending SNS message: ' + (e.fmt if hasattr(e, 'fmt') else '') + ','.join(e.args))
