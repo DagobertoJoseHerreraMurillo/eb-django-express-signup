@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from djaeb ngo.shortcuts import render
+from django.shortcuts import render
 from .models import Leads
 
 
@@ -10,4 +10,11 @@ def home(request):
 def signup(request):
     leads = Leads()
     status = leads.insert_lead(request.POST['name'], request.POST['email'], request.POST['previewAccess'])
+    return HttpResponse('', status=status)
+
+def signup(request):
+    leads = Leads()
+    status = leads.insert_lead(request.POST['name'], request.POST['email'], request.POST['previewAccess'])
+    if status == 200:
+        leads.send_notification(request.POST['email'])
     return HttpResponse('', status=status)
