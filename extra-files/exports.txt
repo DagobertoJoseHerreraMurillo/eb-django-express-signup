@@ -1,0 +1,4 @@
+export NEW_SIGNUP_TOPIC=''
+export AWS_REGION='eu-west-1'
+export STARTUP_SIGNUP_TABLE='gsg-signup-table'
+export DEBUG='True'
